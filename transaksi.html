@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi - Simpin Smart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header dengan logo dan navigasi -->
+    <header>
+        <div class="header-isi">
+            <div class="bagian-logo">
+                <img src="1000200068-removebg-preview (1).png" alt="Logo PinjamSmart">
+                <h1>Simpin Smart</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="transaksi.html" class="active">Transaksi</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Konten Transaksi -->
+    <main>
+        <div class="kotak-konten">
+            <h2>Form Transaksi</h2>
+            <form id="transaksiForm">
+                <div class="form-group">
+                    <label for="namaAnggota">Nama Anggota *</label>
+                    <input type="text" id="namaAnggota" placeholder="Masukkan nama anggota" required>
+                    <div class="error" id="errorNama">Nama anggota harus diisi</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="jenisTransaksi">Jenis Transaksi *</label>
+                    <select id="jenisTransaksi" required>
+                        <option value="">-- Pilih Jenis --</option>
+                        <option value="Simpanan">Simpanan</option>
+                        <option value="Pinjaman">Pinjaman</option>
+                    </select>
+                    <div class="error" id="errorJenis">Jenis transaksi harus dipilih</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="jumlah">Jumlah (Rp) *</label>
+                    <input type="number" id="jumlah" placeholder="Masukkan jumlah" min="0" required>
+                    <div class="error" id="errorJumlah">Jumlah harus diisi dengan angka yang valid</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tanggal">Tanggal Transaksi *</label>
+                    <input type="date" id="tanggal" required>
+                    <div class="error" id="errorTanggal">Tanggal harus diisi</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="kategori">Kategori</label>
+                    <input type="text" id="kategori" placeholder="Contoh: Pokok, Bunga, Wajib">
+                </div>
+
+                <button type="submit">Simpan Transaksi</button>
+            </form>
+        </div>
+
+        <!-- Daftar Transaksi -->
+        <div class="kotak-konten">
+            <h2>Daftar Transaksi</h2>
+            <div class="table-container">
+                <table id="transaksiTable">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Transaksi</th>
+                            <th>Jumlah</th>
+                            <th>Kategori</th>
+                            <th>Tanggal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transaksiBody">
+                        <tr>
+                            <td colspan="5" style="text-align: center; color: #999;">Belum ada transaksi</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Simpin Smart. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

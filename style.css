@@ -1,0 +1,237 @@
+/* reset css dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* bagian header - belajar flexbox dari youtube */
+header {
+    background-color: #4a69bd;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-isi {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bagian-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.bagian-logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+}
+
+.bagian-logo h1 {
+    font-size: 22px;
+}
+
+/* navigasi menu - copas dari w3schools */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+nav ul li a.active {
+    background-color: rgba(255,255,255,0.3);
+    font-weight: bold;
+}
+
+/* konten utama */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.halaman {
+    display: none;
+}
+
+.halaman.aktif {
+    display: block;
+}
+
+.kotak-konten {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #4a69bd;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+/* styling form */
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #4a69bd;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* tombol */
+button {
+    background-color: #4a69bd;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3c5aa6;
+}
+
+/* tabel transaksi */
+.table-container {
+    overflow-x: auto;
+    margin-top: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #f5f5f5;
+    color: #4a69bd;
+    font-weight: 600;
+}
+
+tr:hover {
+    background: #f9f9f9;
+}
+
+/* footer */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 40px;
+}
+
+/* responsive - copas dari w3schools */
+@media (max-width: 768px) {
+    .header-isi {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    main {
+        margin: 20px auto;
+    }
+
+    .kotak-konten {
+        padding: 18px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
+
+/* kotak info di beranda */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.info-box {
+    background: #f8f9fa;
+    padding: 18px;
+    border-radius: 6px;
+    border-left: 4px solid #4a69bd;
+}
+
+.info-box h3 {
+    color: #4a69bd;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
