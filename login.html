@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -59,7 +60,42 @@
         <p>&copy; 2025 Simpin Smart | Smart Loans & Investment.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // validasi form login dengan username & password beneran - belajar dari stackoverflow
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log('Form login disubmit'); // debugging
+            
+            var username = document.getElementById('username').value.trim();
+            var password = document.getElementById('password').value.trim();
+
+            // reset error
+            document.getElementById('errorUsername').style.display = 'none';
+            document.getElementById('errorPassword').style.display = 'none';
+
+            var valid = true;
+
+            if (username === '') {
+                document.getElementById('errorUsername').style.display = 'block';
+                valid = false;
+            }
+
+            if (password === '') {
+                document.getElementById('errorPassword').style.display = 'block';
+                valid = false;
+            }
+
+            if (valid) {
+                // login berhasil - gak perlu cek username & password
+                alert("Login berhasil! Selamat datang, " + username);
+                
+                // redirect ke beranda setelah 500ms - biar alert keliatan dulu
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 100);
+            }
+        });
+    </script>
 
 </body>
 </html>
