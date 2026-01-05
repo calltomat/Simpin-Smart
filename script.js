@@ -1,26 +1,9 @@
-// fungsi ganti halaman - belajar dari youtube
-function gantiHalaman(namaHalaman) {
-    console.log('Pindah ke halaman: ' + namaHalaman); // buat ngecek aja
-    
-    // sembunyiin semua halaman dulu
-    var semuaHalaman = document.querySelectorAll('.halaman');
-    semuaHalaman.forEach(function(halaman) {
-        halaman.classList.remove('aktif');
-    });
-    
-    // tampilin halaman yang diklik
-    document.getElementById(namaHalaman).classList.add('aktif');
-    
-    return false;
-}
-
-// array buat nyimpen data transaksi
+// array untuk menyimpan data transaksi
 var daftarTransaksi = [];
 
-// validasi dan simpan transaksi - copas dari w3schools
+// validasi dan simpan transaksi
 document.getElementById('transaksiForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    console.log('Form transaksi disubmit'); // debugging
     
     // ambil value dari form
     var nama = document.getElementById('namaAnggota').value.trim();
@@ -69,7 +52,6 @@ document.getElementById('transaksiForm').addEventListener('submit', function(e) 
         };
 
         daftarTransaksi.push(transaksi);
-        console.log('Transaksi berhasil ditambahkan:', transaksi);
         
         updateTabel();
         
@@ -105,34 +87,3 @@ function updateTabel() {
         baris.insertCell(4).innerHTML = transaksi.tanggal;
     }
 }
-
-// validasi form login
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    console.log('Form login disubmit'); // debugging
-    
-    var username = document.getElementById('username').value.trim();
-    var password = document.getElementById('password').value.trim();
-
-    // reset error
-    document.getElementById('errorUsername').style.display = 'none';
-    document.getElementById('errorPassword').style.display = 'none';
-
-    var valid = true;
-
-    if (username === '') {
-        document.getElementById('errorUsername').style.display = 'block';
-        valid = false;
-    }
-
-    if (password === '') {
-        document.getElementById('errorPassword').style.display = 'block';
-        valid = false;
-    }
-
-    if (valid) {
-        alert('Login berhasil! Selamat datang, ' + username);
-        document.getElementById('loginForm').reset();
-        window.location.href = 'beranda.html';
-    }
-});
