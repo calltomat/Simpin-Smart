@@ -11,7 +11,7 @@ body {
     color: #333;
 }
 
-/* bagian header - belajar flexbox dari youtube */
+/* bagian header */
 header {
     background-color: #4a69bd;
     color: white;
@@ -44,7 +44,7 @@ header {
     font-size: 22px;
 }
 
-/* navigasi menu - copas dari w3schools */
+/* navigasi menu */
 nav ul {
     list-style: none;
     display: flex;
@@ -72,14 +72,6 @@ main {
     max-width: 1200px;
     margin: 30px auto;
     padding: 0 20px;
-}
-
-.halaman {
-    display: none;
-}
-
-.halaman.aktif {
-    display: block;
 }
 
 .kotak-konten {
@@ -185,7 +177,7 @@ footer {
     margin-top: 40px;
 }
 
-/* responsive - copas dari w3schools */
+/* responsive design */
 @media (max-width: 768px) {
     .header-isi {
         flex-direction: column;
